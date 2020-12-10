@@ -4,14 +4,14 @@ import "../src/styles/app.scss";
 
 import Player from "./components/Player";
 import Song from "./components/Song";
-import chillHop from "./util";
+import chillHop from "./tracks";
 import Library from "./components/Library";
 import Nav from "./components/Nav";
 
 function App() {
   const [songs, setSongs] = useState(chillHop());
   const [currentSong, setCurrentSong] = useState(songs[0]);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [libraryStatus, setLibraryStatus] = useState(false);
 
   console.log(libraryStatus);
