@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 0;
+
+  .up-next {
+    cursor: pointer;
+    padding: 4px 32px;
+    font-weight: bold;
+    text-transform: lowercase;
+
+    &:hover {
+      color: rgb(209, 0, 0);
+      transition: 0.15s;
+    }
+  }
+}
