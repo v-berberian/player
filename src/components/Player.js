@@ -15,6 +15,7 @@ const Player = ({
   audioRef,
   songs,
   setSongs,
+  setDarkMode
 }) => {
   useEffect(() => {
     setSongs(

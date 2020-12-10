@@ -1,7 +1,18 @@
 nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   padding: 16px 0;
+
+  .dark-mode {
+    padding: 4px 32px;
+
+    &:hover {
+      cursor: pointer;
+      color: rgb(209, 0, 0);
+      transition: 0.15s;
+    }
+  }
 
   .up-next {
     cursor: pointer;

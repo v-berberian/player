@@ -11,16 +11,17 @@ import Nav from "./components/Nav";
 function App() {
   const [songs, setSongs] = useState(chillHop());
   const [currentSong, setCurrentSong] = useState(songs[0]);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [libraryStatus, setLibraryStatus] = useState(false);
+  const [darkMode, setDarkMode] = useState(false)
 
   console.log(libraryStatus);
 
   const audioRef = useRef(null);
 
   return (
-    <div className="App">
-      <Nav setLibraryStatus={(libraryStatus, setLibraryStatus)} />
+    <div className={`App ${darkMode ? "dark-background": "light-background"}`}>
+      <Nav darkMode={darkMode} setDarkMode={setDarkMode} setLibraryStatus={(libraryStatus, setLibraryStatus)} />
       <div className="main">
       <Song currentSong={currentSong} />
       <Player

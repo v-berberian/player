@@ -27,6 +27,17 @@ h3 {
   justify-content: center;
 }
 
+.light-background {
+  background-color: white;
+  transition: 0.5s;
+
+}
+
+.dark-background {
+  transition: 0.5s;
+  background-color: black;
+}
+
 @import "./song";
 @import "./player";
 @import "./library";
