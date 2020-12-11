@@ -1,1 +1,4 @@
-This is a player project, created on React.js. This repository is used for GitHub pages version of https://github.com/vadimberberian/player-code
+This is a player project, created on React.js. This repository is used for actual preview of https://github.com/vadimberberian/player-code
+
+Please visit https://vadimberberian.github.io/player/ for preview.
+
