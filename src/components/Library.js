@@ -13,6 +13,8 @@ const Library = ({
   isPlaying,
   libraryStatus,
   setLibraryStatus,
+  darkMode,
+  setDarkMode
 }) => {
   let libraryRef = useRef();
 
@@ -22,7 +24,6 @@ const Library = ({
         setLibraryStatus(false);
       }
     };
-
     document.addEventListener("mousedown", handler);
 
     return () => {
@@ -33,9 +34,9 @@ const Library = ({
   return (
     <div
       ref={libraryRef}
-      className={`library ${libraryStatus ? "visible" : ""}`}
+      className={`library ${libraryStatus ? "visible" : ""}  ${darkMode ? "dark-background": "light-background"} `}
     >
-      <div className="library-header">
+      <div className={`library-header ${darkMode ? "dark-background": "light-background"}`}>
         <h2>up next</h2>
         <CloseIcon
         className="close-window"
@@ -59,6 +60,7 @@ const Library = ({
             songs={songs}
             audioRef={audioRef}
             isPlaying={isPlaying}
+            darkMode={darkMode}
           />
         ))}
       </div>

@@ -6,6 +6,9 @@ nav {
 
   .dark-mode {
     padding: 4px 32px;
+    font-size: 5.5rem;
+    height: initial;
+    -webkit-tap-highlight-color: transparent;
 
     &:hover {
       cursor: pointer;

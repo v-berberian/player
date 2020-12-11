@@ -5,8 +5,8 @@ const Nav = ({ libraryStatus, setLibraryStatus, darkMode, setDarkMode }) => {
   console.log(darkMode)
   return (
     <nav>
-      <div className="dark-mode">
-      <NightsStayIcon onClick={()=> setDarkMode(!darkMode) } />
+      <div className="icon-wrapper">
+      <NightsStayIcon className="dark-mode" onClick={()=> setDarkMode(!darkMode) } />
       </div>
       <h3 className="up-next" onClick={() => setLibraryStatus(true)}>
         Up Next

@@ -7,6 +7,7 @@ const LibrarySong = ({
   setCurrentSong,
   audioRef,
   isPlaying,
+  darkMode
 }) => {
   const updatedSongs = () => {
     setSongs(
@@ -29,9 +30,15 @@ const LibrarySong = ({
     }
   };
 
+  const handleTheme = () => {
+return "selected"
+  }
+
   return (
     <div
-      className={`library-song ${song.active ? "selected" : ""}`}
+      // className={`library-song ${song.active && !darkMode ? "selected" : ""} ${song.active && darkMode ? "dark-mode-selection":""}`}
+      // className={`library-song ${song.active && !darkMode ? "selected" : song.active && darkMode ? (()=>{ return ("dark-mode-selection")})():""}`}
+      className={`${darkMode ? "library-song-dark-mode":"library-song"} ${song.active && !darkMode ? "selected" : song.active && darkMode ? "dark-mode-selection":""}`}
       onClick={() => {
         songSelectHandler();
         updatedSongs();

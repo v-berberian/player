@@ -40,6 +40,8 @@ function App() {
         songs={songs}
         setCurrentSong={setCurrentSong}
         setSongs={setSongs}
+        darkMode={darkMode} 
+        setDarkMode={setDarkMode}
       />
     </div>
   );
