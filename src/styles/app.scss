@@ -28,24 +28,10 @@ h4 {
   justify-content: center;
 }
 
-.light-background {
-  background-color: white;
-  transition: 0.5s;
-}
-
-.dark-background {
-  transition: 0.5s;
-  background-color: black !important;
-  color: white ;
-}
-
-// .dark-mode-hover {
-
-// }
-
 
 
 @import "./song";
 @import "./player";
 @import "./library";
 @import "./nav";
+@import "./dark-mode"

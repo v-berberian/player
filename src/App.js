@@ -15,9 +15,8 @@ function App() {
   const [libraryStatus, setLibraryStatus] = useState(false);
   const [darkMode, setDarkMode] = useState(false)
 
-  console.log(libraryStatus);
-
   const audioRef = useRef(null);
+
 
   return (
     <div className={`App ${darkMode ? "dark-background": "light-background"}`}>

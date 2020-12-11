@@ -36,8 +36,6 @@ return "selected"
 
   return (
     <div
-      // className={`library-song ${song.active && !darkMode ? "selected" : ""} ${song.active && darkMode ? "dark-mode-selection":""}`}
-      // className={`library-song ${song.active && !darkMode ? "selected" : song.active && darkMode ? (()=>{ return ("dark-mode-selection")})():""}`}
       className={`${darkMode ? "library-song-dark-mode":"library-song"} ${song.active && !darkMode ? "selected" : song.active && darkMode ? "dark-mode-selection":""}`}
       onClick={() => {
         songSelectHandler();

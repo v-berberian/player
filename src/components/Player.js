@@ -15,7 +15,6 @@ const Player = ({
   audioRef,
   songs,
   setSongs,
-  setDarkMode
 }) => {
   useEffect(() => {
     setSongs(
@@ -23,11 +22,12 @@ const Player = ({
         return {
           ...targetSong,
           active: targetSong.id === currentSong.id,
-        };
+        }
       })
-    );
+    )
+    
   }, [currentSong]);
-
+  
   //Event Handlers
   const playSongHandler = () => {
     if (isPlaying) {
@@ -42,8 +42,18 @@ const Player = ({
   const autoPlayHandler = () => {
     if (isPlaying) {
       audioRef.current.play();
+      console.log("now playing")
     }
   };
+
+  const iOSPlayback = () => {
+    if (isPlaying) {
+      const playPromise = audioRef.current.play();
+      playPromise.then((audio) => {
+        audioRef.current.play();
+      });
+    }
+  }
 
   //States
   const [songInfo, setSongInfo] = useState({
@@ -68,19 +78,23 @@ const Player = ({
     );
   };
 
+  
+
   function skip(direction) {
     // -1 or 1
     const currentIndex = songs.findIndex((s) => s.id === currentSong.id);
     let newIndex = currentIndex + direction;
-
+    
     if (newIndex < 0) {
       newIndex = songs.length - 1;
+      
     } else if (newIndex >= songs.length) {
       newIndex = 0;
     }
-
     setCurrentSong(songs[newIndex]);
+
   }
+
 
   return (
     <div className="player">
@@ -101,7 +115,7 @@ const Player = ({
           className="skip-back"
           size="2x"
           icon={faStepBackward}
-          onClick={() => skip(-1)}
+          onClick={() => {skip(-1); iOSPlayback()}}
         />
         <FontAwesomeIcon
           className="play"
@@ -113,7 +127,7 @@ const Player = ({
           className="skip-forward"
           size="2x"
           icon={faStepForward}
-          onClick={() => skip(1)}
+          onClick={() => {skip(1); iOSPlayback()}}
         />
       </div>
       <audio

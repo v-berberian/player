@@ -14,7 +14,7 @@ const Library = ({
   libraryStatus,
   setLibraryStatus,
   darkMode,
-  setDarkMode
+  setDarkMode,
 }) => {
   let libraryRef = useRef();
 

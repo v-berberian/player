@@ -2,7 +2,7 @@ import React from "react";
 import NightsStayIcon from '@material-ui/icons/NightsStay';
 
 const Nav = ({ libraryStatus, setLibraryStatus, darkMode, setDarkMode }) => {
-  console.log(darkMode)
+  // console.log(darkMode)
   return (
     <nav>
       <div className="icon-wrapper">
